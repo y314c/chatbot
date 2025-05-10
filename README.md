@@ -28,6 +28,9 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
     Enter your chatbot's GitHub repository and click here.<br>
     ![images](images/01.png)
 
+    After entering this interface, enter the password you have set to chat with the chatbot<br>
+    ![images](images/02.png)
+
 
 
   
