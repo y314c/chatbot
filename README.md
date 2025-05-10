@@ -18,7 +18,7 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 
    Use the Windows+R shortcut key on the computer, enter the CMD command, and enter the command window.
 
-   Use pip install -r requirements.txt
+   Use pip install -r requirements.txt<br>
    ***If the download is unsuccessful, some technical means such as climbing over the wall can be used to download.***
 
 2. Run the app
@@ -31,6 +31,7 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
     After entering this interface, enter the password you have set to chat with the chatbot<br>
     ![images](images/02.png)
 
+    ***Due to regional issues, chatting may not be possible***
 
 
   
