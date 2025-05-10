@@ -6,20 +6,28 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 
 ### How to run it on your own machine
 
-1. Install the requirements
-
-   Download and save all files from the warehouse in one folder
-
-   Open the folder using Visual,And download either Python 3.12 or Python 3.14
-
-   In the computer system properties, click on enter environment variables, open the PATH of the system variables for editing, and create a new "(Python download location) cloud storage address: \ python \ Scripts"
-
-   Reference the Python you downloaded in Visual.
-
-   Use the Windows+R shortcut key on the computer, enter the CMD command, and enter the command window.
-
-   Use pip install -r requirements.txt<br>
-   ***If the download is unsuccessful, some technical means such as climbing over the wall can be used to download.***
+### Installation Guide
+﻿
+1. **Prerequisites Installation**
+- Download all files from the repository and save them in a single folder.
+- Open the folder in Visual Studio Code.
+- Install either Python 3.12 or Python 3.14.
+﻿
+2. **Environment Configuration**
+- Navigate to System Properties → Environment Variables.
+- Edit the system PATH variable and add a new entry:
+```
+[Your Python installation path]\Python\Scripts
+```
+- Configure Visual Studio Code to use the installed Python interpreter.
+﻿
+3. **Dependencies Installation**
+- Open Command Prompt (Windows+R → type `cmd`).
+- Navigate to your project folder and run:
+```
+pip install -r requirements.txt
+```
+- *Note: If you encounter download issues, you may need to use alternative network solutions.*
 
 2. Run the app
 
