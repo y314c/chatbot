@@ -8,7 +8,12 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 
 1. Install the requirements
 
-   ```
+   Download and save all files from the warehouse in one folder
+
+   Open the folder using Visual,And download either Python 3.12 or Python 3.14.
+
+   In the computer system properties, click on enter environment variables, open the PATH of the system variables for editing, and create a new "(Python download location) cloud storage address: \ python \ Scripts".
+   
    $ pip install -r requirements.txt
    ```
 
