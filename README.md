@@ -38,6 +38,6 @@ pip install -r requirements.txt
 ![images](images/02.png)
    
 *Note: Service availability may be limited in certain regions.*
-
-
+<br>
+<! -- The above modifications were made through 2205308040301-->
   
