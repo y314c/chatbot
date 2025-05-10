@@ -25,7 +25,7 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 
     Using streamlit_mapp-py in Visual
 
-    Enter your chatbot's GitHub repository and click here.
+    Enter your chatbot's GitHub repository and click here.<br>
     ![image](F:\jie tu\01.png)
 
 
