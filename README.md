@@ -29,17 +29,15 @@ pip install -r requirements.txt
 ```
 - *Note: If you encounter download issues, you may need to use alternative network solutions.*
 
-2. Run the app
-
-    Using streamlit_mapp-py in Visual
-
-    Enter your chatbot's GitHub repository and click here.<br>
-    ![images](images/01.png)
-
-    After entering this interface, enter the password you have set to chat with the chatbot<br>
-    ![images](images/02.png)
-
-    ***Due to regional issues, chatting may not be possible***
+### Running the Application
+﻿
+1. Launch `streamlit_mapp.py` in Visual Studio Code.
+2. Access your chatbot's GitHub repository interface.
+![Application Interface](images/01.png)
+3. Enter your pre-set password to start chatting with the chatbot.
+![Chat Interface](images/02.png)
+   
+*Note: Service availability may be limited in certain regions.*
 
 
   
