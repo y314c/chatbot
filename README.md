@@ -26,7 +26,8 @@ python --version
 ```
 -   If the version number is displayed (such as Python 3.12.0), the installation is successful.
 
-<! -- The above modifications were made through 2205308040320-->
+<! -- The above modifications were made through 2205308040320--><br> 
+
 ﻿
 2. **Environment Configuration**
 - Navigate to System Properties → Environment Variables.
