@@ -41,3 +41,4 @@ pip install -r requirements.txt
 <br>
 <! -- The above modifications were made through 2205308040301-->
   
+### Detailed Function Description and Implementation Analysis of the Module
