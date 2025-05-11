@@ -12,6 +12,22 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 - Download all files from the repository and save them in a single folder.
 - Open the folder in Visual Studio Code.
 - Install either Python 3.12 or Python 3.14.
+- 1. Download Python
+-    Visit the Python official website (https://www.python.org/downloads/windows/) download page.
+-    Select the latest version (such as Python 3.12.x), and click Download Windows Installer (64-bit/32-bit).
+-   Run the installer
+- 2. Double-click the downloaded .exe file.
+-   Check Add Python to PATH (important! Otherwise, you need to manually configure the environment variables).
+-   Click Install Now (default installation) or customize the installation path.
+- 3. Verify the installation
+-   Open the command prompt (Win + R → enter cmd),
+-   Run:
+```
+python --version
+```
+-   If the version number is displayed (such as Python 3.12.0), the installation is successful.
+
+<! -- The above modifications were made through 2205308040320-->
 ﻿
 2. **Environment Configuration**
 - Navigate to System Properties → Environment Variables.
