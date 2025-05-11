@@ -15,7 +15,7 @@ A simple Streamlit app that shows how to build a chatbot using OpenAI's GPT-3.5.
 - (1). Download Python
 -    Visit the Python official website (https://www.python.org/downloads/windows/) download page.
 -    Select the latest version (such as Python 3.12.x), and click Download Windows Installer (64-bit/32-bit).
--   Run the installer
+-    Run the installer
 - (2). Double-click the downloaded .exe file.
 -   Check Add Python to PATH (important! Otherwise, you need to manually configure the environment variables).
 -   Click Install Now (default installation) or customize the installation path.
