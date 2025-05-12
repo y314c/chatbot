@@ -206,3 +206,103 @@ Reactive Programming: Streamlit’s declarative framework inherently manages sta
 Structured Data: The messages list in st.session_state enforces a schema (role + content) for scalable message handling.
 Client-Side Persistence: Avoids server-side storage by leveraging browser-based session states, simplifying deployment while retaining conversational context.
 
+
+
+# Code Expansion
+
+
+
+
+# Enhanced Session Management with Message Persistence and Interaction
+import streamlit as st
+import json
+import os
+
+# Initialize session state with default structure
+if "messages" not in st.session_state:
+    st.session_state["messages"] = []  # Conversation history storage
+    
+# Persistent storage setup (optional)
+STORAGE_FILE = "conversation_data.json"
+
+# Load previous conversation if exists
+if os.path.exists(STORAGE_FILE):
+    with open(STORAGE_FILE, "r") as f:
+        saved_data = json.load(f)
+        st.session_state["messages"] = saved_data.get("messages", [])
+
+# Function to save current state to file
+def save_conversation():
+    with open(STORAGE_FILE, "w") as f:
+        json.dump({"messages": st.session_state["messages"]}, f)
+
+# Message input area
+st.title("Chat Interface")
+user_input = st.text_input("Your message", key="input_field")
+
+# Process new message when submitted
+if st.button("Send") or st.session_state.input_field and len(st.session_state.input_field.strip()) > 0:
+    # Add user message to session state
+    st.session_state["messages"].append({
+        "role": "user",
+        "content": st.session_state.input_field.strip()
+    })
+    st.session_state.input_field = ""  # Clear input field
+    
+    # Simulate response generation (replace with actual NLP model)
+    response = generate_response(st.session_state["messages"][-1]["content"])
+    
+    # Add bot response to session state
+    st.session_state["messages"].append({
+        "role": "assistant",
+        "content": response
+    })
+    
+    # Save conversation after update
+    save_conversation()
+
+# Message display component
+for msg in st.session_state["messages"]:
+    with st.chat_message(msg["role"]):
+        st.write(msg["content"])
+
+# Simple response generator (placeholder for real NLP)
+def generate_response(user_input):
+    """Basic echo response - replace with proper NLP processing"""
+    return f"You said: {user_input}"
+
+# Save conversation on script exit
+import atexit
+atexit.register(save_conversation)
+
+
+
+
+# Extended English explanation
+
+Explanation of Enhancements:
+Persistent Storage:
+
+Added JSON file storage to remember conversations across browser restarts
+Implements save_conversation() function to persist data
+Uses atexit to ensure data save on script termination
+User Interface Elements:
+
+Added text input field and send button for message composition
+Implemented basic chat UI layout using Streamlit's st.chat_message
+Message Processing:
+
+Created message objects with role distinction (user/assistant)
+Added placeholder response generation function
+Implemented input validation and field clearance
+Modular Design:
+
+Separated concerns into distinct functions (persistence, response generation)
+Used constant for storage file path
+Included documentation comments for each feature
+Extensibility:
+
+Response generator can be replaced with API calls or machine learning models
+Storage mechanism can be adapted for database integration
+Supports multiple message attributes extension (timestamps, etc.)
+This enhanced implementation maintains the original session management while adding core chat functionality, demonstrating how to expand the initial state management into a functional conversational interface.
