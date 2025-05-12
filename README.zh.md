@@ -32,7 +32,7 @@ python --version
 
 <! -- by 杜俊言 --><br>
 2.**环境配置**
--导航到系统属性→ 环境变量。
+-找到到系统属性→ 环境变量。
 -编辑系统PATH变量并添加新条目：
 ```
 [您的Python安装路径]\Python\Scripts
@@ -41,9 +41,9 @@ python --version
 ﻿
 3.**依赖关系安装**
 -打开命令提示符（Windows+R→ 键入“cmd”）。
--导航到项目文件夹并运行：
+-在命令窗口运行：
 ```
-pip安装-r要求.txt
+pip install -r requirements.txt
 ```
 -*注意：如果您遇到下载问题，可能需要使用其他网络解决方案*
 
