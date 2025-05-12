@@ -62,11 +62,18 @@ pip install -r requirements.txt
 <! -- The above modifications were made through 2205308040301-->
   
 ### Detailed Function Description and Implementation Analysis of the Module
+ 
+ Interface initialization and user guidance
 
-Detailed Function Description and Implementation Analysis of the Module
+• Interface title and description: Use the st.title() and st.write() functions to display the title and description of the chatbot respectively, and introduce to users that this is a simple chatbot based on the OpenAI GPT-3.5 model, and need to provide O The penAI API key can only be used.
 
-Import module and interface initialization
+• Get the API key: st.text_input() creates a secure text input box, requiring the user to enter the OpenAI API key, and the input content will be hidden in the form of a password to protect the user‘s key security.
+```import streamlit as st
 
-• Import module: import streamlit as st Import the Streamlit library and abreve it as st, which is the core module for building the user interface.
-
-• Display title: st.title(”Chatbot“) is used to display a title on the web page. The title content is ”Chatbot“, which is the top of the interface and is used to identify the theme of the application.
+# 显示标题和描述
+st.title("Chatbot")
+st.write(
+    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
+    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
+)```
