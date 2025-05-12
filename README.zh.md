@@ -31,3 +31,30 @@ python --version
 - &emsp;如果显示版本号（例如 Python 3.12.0），则表示安装成功。
 
 <! -- by 杜俊言 --><br>
+2.**环境配置**
+-导航到系统属性→ 环境变量。
+-编辑系统PATH变量并添加新条目：
+```
+[您的Python安装路径]\Python\Scripts
+```
+-配置Visual Studio代码以使用已安装的Python解释器。
+﻿
+3.**依赖关系安装**
+-打开命令提示符（Windows+R→ 键入“cmd”）。
+-导航到项目文件夹并运行：
+```
+pip安装-r要求.txt
+```
+-*注意：如果您遇到下载问题，可能需要使用其他网络解决方案*
+
+###运行应用程序
+﻿
+1.在Visual Studio代码中启动`streamlit_mapp.py`。
+2.访问聊天机器人的GitHub存储库界面。<br>
+![images](images/01.png)
+3.输入预设密码，开始与聊天机器人聊天。<br>
+![images](images/02.png)
+   
+*注意：某些地区的服务可用性可能有限*
+<br>
+<！--by杨志勇 -->
