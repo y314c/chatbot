@@ -95,3 +95,91 @@ else:
     pass
 ```
 <! -- The above modifications were made through 2205308040348->
+
+
+Security Authentication Module
+
+Python
+
+
+# Dynamic API Key Input Logic openai_api_key = st.text_input("OpenAI API Key", type="password") 
+
+Implementation Logic:
+
+Set input type to “password” to hide plaintext.
+
+Display guide prompt information (icon + text combination) when no key is entered.
+
+It is recommended to use secrets.to to store the key in the production environment.
+
+Security Features:
+Dynamic Input of API Key: Users can dynamically input API keys through the interface. 
+
+Key encryption storage: Keys should not be stored in plain text. They should be stored in an encrypted form to enhance security. 
+
+Key display and hiding: When inputting, the key content should be hidden to prevent others from peeping. 
+
+When the user has not entered the key, display the guiding prompt information to help the user complete the operation. 
+
+Realization logic 
+
+Dynamic input of API key: 
+
+python
+
+import streamlit as st
+# Dynamic input logic for API key
+api_key = st.text_input("OpenAI API Key", type="password") 
+
+Use the `text_input` function of Streamlit to create a password input box where users can enter their API keys. 
+
+The "type="password"" parameter ensures that the entered content is displayed in ciphertext form, enhancing security. 
+
+Key encryption storage: 
+
+It is recommended to use the secrets module to store and manage keys. The secrets module is a built-in module in Python, specifically designed for handling sensitive information such as passwords and keys. 
+
+python
+
+
+```python
+import secrets
+
+# Generate an encrypted key
+encrypted_api_key = secrets.token_urlsafe(16)
+
+# Store the encrypted key (This is just an example. The actual storage method should be determined based on the security requirements of the production environment)
+# Do not print or expose the key directly in a real scenario
+print("Encrypted API Key:", encrypted_api_key)
+``` 
+
+Key Hide/Show: 
+
+It has been achieved through type="password", and the content in the input box will be displayed in ciphertext. 
+
+Key Hide/Show: 
+
+It has been achieved through type="password", and the content in the input box will be displayed in ciphertext. 
+
+Guiding prompt information: 
+
+When the user has not entered the key, display the guidance prompt message and icon. 
+
+python
+
+
+if not api_key:
+    st.warning('Please enter your OpenAI API key to continue.')
+st.image('path_to_icon.png')  # Replace with the actual path to the icon 
+
+
+
+
+
+Production environment 
+
+
+In the production environment, use secrets.to to store keys to ensure the security and privacy of the keys.
+
+
+<! -- The above modifications were made through 2205308040328->
