@@ -30,7 +30,7 @@ python --version
 ```
 - &emsp;If the version number is displayed (such as Python 3.12.0), the installation is successful.
 
-<! -- The above modifications were made through 2205308040320--><br> 
+<! -- by 杜俊言 --><br> 
 
 ﻿
 2. **Environment Configuration**
@@ -59,7 +59,7 @@ pip install -r requirements.txt
    
 *Note: Service availability may be limited in certain regions.*
 <br>
-<! -- The above modifications were made through 2205308040301-->
+<! -- by 杨志勇 -->
   
 ### Detailed Function Description and Implementation Analysis of the Module
 
@@ -94,7 +94,7 @@ else:
     # This is a placeholder for the subsequent chat logic
     pass
 ```
-<! -- The above modifications were made through 2205308040348->
+<! -- by 覃化杰 -->
 
 
 Security Authentication Module
@@ -182,7 +182,7 @@ Production environment
 In the production environment, use secrets.to to store keys to ensure the security and privacy of the keys.
 
 
-<! -- The above modifications were made through 2205308040328->
+<! -- by 罗全有 -->
 
 
 
@@ -308,7 +308,7 @@ Supports multiple message attributes extension (timestamps, etc.)
 This enhanced implementation maintains the original session management while adding core chat functionality, demonstrating how to expand the initial state management into a functional conversational interface.
 
 
-<! -- The above modifications were made through 2205308040309->
+<! -- by 邓荣祥 -->
 
 
 
@@ -365,7 +365,7 @@ The line with st.chat_message("assistant"): creates a context for rendering the 
 The line response = st.write_stream(stream) utilizes the st.write_stream method to display the assistant's response incrementally. This approach enhances the user experience by making the conversation feel more dynamic and natural, as users can see the response being generated in real-time rather than waiting for the entire message to appear at once.
 
 
-    <! -- The above modifications were made through 2205308040310->
+    <! -- by 黄敏初 -->
 
 # Input Handling Module
 
@@ -430,4 +430,4 @@ with st.chat_message("user"):
 - The user's input message is appended to the messages list in the session state, and st.chat_message is used to display the message.
 
 
-<! -- The above modifications were made through 2205308040337->
+<! -- by 韦统 -->
