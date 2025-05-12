@@ -95,3 +95,22 @@ else:
     pass
 ```
 <! -- The above modifications were made through 2205308040348->
+
+
+Security Authentication Module
+
+Python
+
+
+# Dynamic API Key Input Logic openai_api_key = st.text_input("OpenAI API Key", type="password") 
+
+Implementation Logic:
+
+Set input type to “password” to hide plaintext.
+
+Display guide prompt information (icon + text combination) when no key is entered.
+
+It is recommended to use secrets.to to store the key in the production environment.
+
+
+<! -- The above modifications were made through 2205308040328->
