@@ -431,3 +431,57 @@ with st.chat_message("user"):
 
 
 <! -- by 韦统 -->
+
+### Optimize the detailed technical description
+# 1. Request failure retry mechanism
+```
+# OpenAI API Integration
+from tenacity import retry, stop_after_attempt, wait_exponential
+import httpx
+
+class APIClient:
+    @retry(
+        stop=stop_after_attempt(3),  # Maximum number of retries
+        wait=wait_exponential(multiplier=1, max=10),  #Index retreat strategy
+        retry=(
+            retry_if_exception_type(httpx.NetworkError) |  #The network is down
+            retry_if_status_code(500, 502, 503, 504)       # Server error
+        )
+    )
+    async def call_api_async(self, url: str):
+        async with httpx.AsyncClient(timeout=10) as client:
+            response = await client.get(url)
+            response.raise_for_status()  # Trigger HTTP error detection
+            return response.json()
+```
+## Advanced Features
+# Idempotent guarantee
+
+## Automatically add a unique ID parameter to GET requests to prevent duplicate side effects:
+```
+ 
+def idempotent_get(url):
+request_id = uuid.uuid4().hex
+return f"{url}?idempotency_key={request_id}"
+
+```
+## Integrated circuit breaker mechanism
+
+ # Temporarily disable requests in case of consecutive failures using the circuitbreaker library:
+```
+
+from circuitbreaker import circuit
+
+@circuit(failure_threshold=5, recovery_timeout=60)
+def protected_api_call():
+#API call logic
+2. LRU cache optimization
+Purpose
+Reduce duplicate calculations/requests, improve response speed, and lower backend load.
+```
+### LRU cache optimization
+# Purpose
+
+Reduce duplicate calculations/requests, improve response speed, and lower backend load.
+
+<! -- by 杨尚财 -->
