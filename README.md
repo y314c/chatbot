@@ -309,3 +309,31 @@ This enhanced implementation maintains the original session management while add
 
 
 <! -- The above modifications were made through 2205308040309->
+
+
+
+
+### Detailed Function Description and Implementation Analysis of the Module
+# Message Rendering Explanation
+
+In this chatbot application, message rendering is a crucial part that ensures smooth and understandable communication between the user and the assistant. Effective message rendering enhances user experience and conveys information clearly. Below are the main components of message rendering along with detailed explanations.
+
+## Code Snippets and Explanations
+
+### 1. Displaying Existing Chat Messages
+This section of code retrieves and displays previous messages from `st.session_state.messages`, allowing users to review their conversation history.
+
+```python
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+```
+- Iterating Through Messages: The line for message in st.session_state.messages: loops through all messages stored in the session state. st.session_state is a feature provided by Streamlit that maintains data across user sessions, ensuring that previous messages are accessible.
+
+-  Rendering Messages: The line with st.chat_message(message["role"]): uses a context manager to render each message based on its role, which can be either "user" or "assistant". This distinction helps visually separate the messages, making it clear who is speaking.
+
+- Displaying Content: The line st.markdown(message["content"]) uses Streamlit's st.markdown method to render the message content. This allows for basic Markdown formatting, making the messages more readable and engaging.
+
+
+
+    <! -- The above modifications were made through 2205308040310->
