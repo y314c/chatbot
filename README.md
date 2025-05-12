@@ -97,10 +97,7 @@ else:
 <! -- by 覃化杰 -->
 
 
-Security Authentication Module
-
-Python
-
+### Security Authentication Module
 
 # Dynamic API Key Input Logic openai_api_key = st.text_input("OpenAI API Key", type="password") 
 
@@ -125,7 +122,6 @@ Realization logic
 
 Dynamic input of API key: 
 
-python
 
 import streamlit as st
 # Dynamic input logic for API key
@@ -139,10 +135,10 @@ Key encryption storage:
 
 It is recommended to use the secrets module to store and manage keys. The secrets module is a built-in module in Python, specifically designed for handling sensitive information such as passwords and keys. 
 
-python
 
 
-```python
+
+```
 import secrets
 
 # Generate an encrypted key
@@ -165,7 +161,6 @@ Guiding prompt information:
 
 When the user has not entered the key, display the guidance prompt message and icon. 
 
-python
 
 
 if not api_key:
