@@ -183,3 +183,26 @@ In the production environment, use secrets.to to store keys to ensure the securi
 
 
 <! -- The above modifications were made through 2205308040328->
+
+
+
+
+# English explanation
+
+Session State Check: The if statement verifies whether a key named "messages" already exists in the persistent storage provided by Streamlit's session_state system.
+State Initialization: When no existing "messages" entry is found, a new empty list ([]) is created and assigned to st.session_state.messages, effectively initializing the conversation history container.
+Persistence Across Interactions: By using session_state, this message history persists across multiple user interactions within the same browser session, enabling features like chat applications or multi-step forms.
+
+
+# Core Mechanism
+
+State Synchronization: Leverages Streamlit’s reactive programming model to automatically synchronize session states (e.g., user inputs, UI interactions).
+Message History Storage: Uses a list-based structure to store conversation data, with each entry containing role (e.g., "user"/"assistant") and content metadata for contextual awareness.
+Persistence Across Refreshes: Relies on Streamlit’s st.session_state for in-memory persistence, ensuring continuous access to conversation history even after page reloads.
+
+# Key Design Choices
+
+Reactive Programming: Streamlit’s declarative framework inherently manages state updates (e.g., form inputs, button clicks) without manual intervention.
+Structured Data: The messages list in st.session_state enforces a schema (role + content) for scalable message handling.
+Client-Side Persistence: Avoids server-side storage by leveraging browser-based session states, simplifying deployment while retaining conversational context.
+
