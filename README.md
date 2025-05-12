@@ -400,3 +400,8 @@ else:
         with st.chat_message("user"):
             st.markdown(prompt)
 ```
+## 1. Getting the OpenAI API Key:
+```
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+```
+- This line uses st.text_input to create an input box that prompts the user to enter their OpenAI API key. The type="password" ensures that the input is hidden as a password.
