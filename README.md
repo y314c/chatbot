@@ -62,3 +62,36 @@ pip install -r requirements.txt
 <! -- The above modifications were made through 2205308040301-->
   
 ### Detailed Function Description and Implementation Analysis of the Module
+
+## Interface initialization and user guidance
+
+• Interface title and description: Use the st.title() and st.write() functions to display the title and description of the chatbot respectively, and introduce to users that this is a simple chatbot based on the OpenAI GPT-3.5 model, and need to provide O The penAI API key can only be used.
+
+• Get the API key: st.text_input() creates a secure text input box, requiring the user to enter the OpenAI API key, and the input content will be hidden in the form of a password to protect the user‘s key security.
+### Code demonstration
+```import streamlit as st
+
+# Show title and description
+st.title("Chatbot")
+st.write(
+    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
+    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
+)
+```
+User input verification and interface logic
+
+• API key verification: determine whether the user has entered the API key through the if not openai_api_key: condition. If there is no input, use st.info() to display prompts to tell users that they need to add an API key to continue.
+
+• Chat interface placeholding: If the user provides a valid API key, use the pass statement to reserve the location, indicating that after the user provides the API key, the subsequent chat logic of interaction with OpenAI API has not been implemented and needs to be further developed.
+### Code demonstration
+```# Request the user to input the OpenAI API key via a text input box
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="")
+else:
+    # If the API key exists, proceed to display the chat interface
+    # This is a placeholder for the subsequent chat logic
+    pass
+```
+<! -- The above modifications were made through 2205308040348->
