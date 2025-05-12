@@ -349,5 +349,20 @@ with st.chat_message("user"):
 This allows for basic Markdown formatting, making the message more visually appealing and easier to read.
 
 
+### 3. Displaying Assistant Responses
+
+After the assistant generates a response, the following code is used:
+
+```python
+with st.chat_message("assistant"):
+    response = st.write_stream(stream)
+```
+- Rendering Assistant Message
+  
+The line with st.chat_message("assistant"): creates a context for rendering the assistant's message. This ensures that the message is displayed correctly in the chat interface, formatted appropriately for the assistant's role.
+- Streaming Response
+  
+The line response = st.write_stream(stream) utilizes the st.write_stream method to display the assistant's response incrementally. This approach enhances the user experience by making the conversation feel more dynamic and natural, as users can see the response being generated in real-time rather than waiting for the entire message to appear at once.
+
 
     <! -- The above modifications were made through 2205308040310->
