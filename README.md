@@ -416,3 +416,15 @@ if not openai_api_key:
 client = OpenAI(api_key=openai_api_key)
 ```
 - If the user provides an API key, this line creates an instance of the OpenAI client using the provided key for subsequent API calls.
+## 4. Creating the Chat Input Field:
+```
+if prompt := st.chat_input("What is up?"):
+```
+- This line uses st.chat_input to create an input field that allows the user to enter a message. If the user inputs something, it is stored in the prompt variable.
+## 5. Storing and Displaying User Input:
+```
+st.session_state.messages.append({"role": "user", "content": prompt})
+with st.chat_message("user"):
+    st.markdown(prompt)
+```
+- The user's input message is appended to the messages list in the session state, and st.chat_message is used to display the message.
