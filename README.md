@@ -366,3 +366,68 @@ The line response = st.write_stream(stream) utilizes the st.write_stream method 
 
 
     <! -- The above modifications were made through 2205308040310->
+
+# Input Handling Module
+
+In this application, the input handling module is responsible for obtaining the user's OpenAI API key and the chat messages entered by the user. Below is the relevant code along with a detailed explanation.
+
+## Code
+
+```python
+# Ask user for their OpenAI API key via `st.text_input`.
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+else:
+    # Create an OpenAI client.
+    client = OpenAI(api_key=openai_api_key)
+
+    # Create a session state variable to store the chat messages. This ensures that the
+    # messages persist across reruns.
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    # Display the existing chat messages via `st.chat_message`.
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    # Create a chat input field to allow the user to enter a message. This will display
+    # automatically at the bottom of the page.
+    if prompt := st.chat_input("What is up?"):
+        # Store and display the current prompt.
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+```
+## 1. Getting the OpenAI API Key:
+```
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+```
+- This line uses st.text_input to create an input box that prompts the user to enter their OpenAI API key. The type="password" ensures that the input is hidden as a password.
+## 2. Checking the Validity of the API Key:
+```
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+```
+- If the user does not enter an API key, st.info is used to prompt the user to add their key to continue.
+## 3. Creating the OpenAI Client:
+```
+client = OpenAI(api_key=openai_api_key)
+```
+- If the user provides an API key, this line creates an instance of the OpenAI client using the provided key for subsequent API calls.
+## 4. Creating the Chat Input Field:
+```
+if prompt := st.chat_input("What is up?"):
+```
+- This line uses st.chat_input to create an input field that allows the user to enter a message. If the user inputs something, it is stored in the prompt variable.
+## 5. Storing and Displaying User Input:
+```
+st.session_state.messages.append({"role": "user", "content": prompt})
+with st.chat_message("user"):
+    st.markdown(prompt)
+```
+- The user's input message is appended to the messages list in the session state, and st.chat_message is used to display the message.
+
+
+<! -- The above modifications were made through 2205308040337->
