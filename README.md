@@ -431,3 +431,25 @@ with st.chat_message("user"):
 
 
 <! -- by 韦统 -->
+
+### Optimize the detailed technical description
+# 1. Request failure retry mechanism
+```
+# OpenAI API Integration
+from tenacity import retry, stop_after_attempt, wait_exponential
+import httpx
+
+class APIClient:
+    @retry(
+        stop=stop_after_attempt(3),  # Maximum number of retries
+        wait=wait_exponential(multiplier=1, max=10),  #Index retreat strategy
+        retry=(
+            retry_if_exception_type(httpx.NetworkError) |  #The network is down
+            retry_if_status_code(500, 502, 503, 504)       # Server error
+        )
+    )
+    async def call_api_async(self, url: str):
+        async with httpx.AsyncClient(timeout=10) as client:
+            response = await client.get(url)
+            response.raise_for_status()  # Trigger HTTP error detection
+            return response.json()
