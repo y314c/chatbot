@@ -68,12 +68,14 @@ pip install -r requirements.txt
 • Interface title and description: Use the st.title() and st.write() functions to display the title and description of the chatbot respectively, and introduce to users that this is a simple chatbot based on the OpenAI GPT-3.5 model, and need to provide O The penAI API key can only be used.
 
 • Get the API key: st.text_input() creates a secure text input box, requiring the user to enter the OpenAI API key, and the input content will be hidden in the form of a password to protect the user‘s key security.
+### Code demonstration
 ```import streamlit as st
 
-# 显示标题和描述
+# Show title and description
 st.title("Chatbot")
 st.write(
     "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
     "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
     "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
-)```
+)
+```
