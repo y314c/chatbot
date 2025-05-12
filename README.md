@@ -334,6 +334,20 @@ for message in st.session_state.messages:
 
 - Displaying Content: The line st.markdown(message["content"]) uses Streamlit's st.markdown method to render the message content. This allows for basic Markdown formatting, making the messages more readable and engaging.
 
+### 2. Storing and Displaying User Input
+
+When the user submits a new message, the following code is executed to store and display the input:
+
+```python
+st.session_state.messages.append({"role": "user", "content": prompt})
+with st.chat_message("user"):
+    st.markdown(prompt)
+```
+- Storing User Input:The line st.session_state.messages.append({"role": "user", "content": prompt}) appends the user's input (stored in the variable prompt) to the st.session_state.messages list.
+- Rendering User Message:The line with st.chat_message("user"): creates a context for rendering the user's message. This ensures that the message is displayed in the chat interface with the appropriate formatting for user messages.
+- Displaying Content:The line st.markdown(prompt) uses Streamlit's st.markdown method to render the user's input in the chat window.
+This allows for basic Markdown formatting, making the message more visually appealing and easier to read.
+
 
 
     <! -- The above modifications were made through 2205308040310->
