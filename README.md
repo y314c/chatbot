@@ -405,3 +405,14 @@ else:
 openai_api_key = st.text_input("OpenAI API Key", type="password")
 ```
 - This line uses st.text_input to create an input box that prompts the user to enter their OpenAI API key. The type="password" ensures that the input is hidden as a password.
+## 2. Checking the Validity of the API Key:
+```
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+```
+- If the user does not enter an API key, st.info is used to prompt the user to add their key to continue.
+## 3. Creating the OpenAI Client:
+```
+client = OpenAI(api_key=openai_api_key)
+```
+- If the user provides an API key, this line creates an instance of the OpenAI client using the provided key for subsequent API calls.
