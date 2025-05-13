@@ -324,3 +324,58 @@ with st.chat_message("user"):
 - 将用户输入的消息添加到会话状态的messages列表中，并使用st.chat_message显示该消息。
 
 <! -- by 韦统 -->
+
+
+###优化详细技术说明
+# 1.请求失败重试机制
+```
+# OpenAI API集成
+from tenacity import retry, stop_after_attempt, wait_exponential
+import httpx
+
+class APIClient:
+    @retry(
+        stop=stop_after_attempt(3),  # Maximum number of retries
+        wait=wait_exponential(multiplier=1, max=10),  #Index retreat strategy
+        retry=(
+            retry_if_exception_type(httpx.NetworkError) | #网络已关闭
+            retry_if_status_code(500, 502, 503, 504)       #服务器错误
+        )
+    )
+    async def call_api_async(self, url: str):
+        async with httpx.AsyncClient(timeout=10) as client:
+            response = await client.get(url)
+            response.raise_for_status()  # Trigger HTTP error detection
+            return response.json()
+```
+##高级功能
+#幂等保证
+
+##自动向GET请求添加唯一ID参数，以防止重复副作用：
+```
+ 
+def idempotent_get(url):
+request_id = uuid.uuid4().hex
+return f"{url}?idempotency_key={request_id}"
+
+```
+##综合型断路器机构
+
+ #使用circuitbreaker库暂时禁用连续失败的请求：
+```
+
+from circuitbreaker import circuit
+
+@circuit(failure_threshold=5, recovery_timeout=60)
+def protected_api_call():
+#API call logic
+2. LRU cache optimization
+Purpose
+Reduce duplicate calculations/requests, improve response speed, and lower backend load.
+```
+### LRU缓存优化
+#目的
+
+Reduce duplicate calculations/requests, improve response speed, and lower backend load.
+
+<! -- by 杨尚财 -->
