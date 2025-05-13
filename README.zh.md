@@ -95,9 +95,7 @@ else:
 <！--by覃化杰 -->
 
 安全认证模块
-
 动态 API 密钥输入逻辑 openai_api_key = st.text_input（“OpenAI API 密钥”， type=“password”）
-
 实现逻辑：
 
 将 input type 设置为 “password” 以隐藏纯文本。
@@ -106,7 +104,7 @@ else:
 
 建议使用 secrets.to 将密钥存储在生产环境中。
 
-安全功能： API Key  动态输入：用户可以通过界面动态输入 API Key。
+安全功能： API Key 动态输入：用户可以通过界面动态输入 API Key。
 
 密钥加密存储：密钥不应以纯文本形式存储。它们应以加密形式存储以增强安全性。
 
@@ -121,7 +119,6 @@ API 密钥的动态输入：
 import streamlit as st
 
 API 密钥的动态输入逻辑
-
 api_key = st.text_input（“OpenAI API 密钥”， type=“password”）
 
 使用 Streamlit 的功能创建一个密码输入框，用户可以在其中输入他们的 API 密钥。text_input
