@@ -67,7 +67,17 @@ pip install -r requirements.txt
 ### 接口初始化和用户指导
 · 界面标题和描述：使用st.title（）和st.write（）函数分别显示聊天机器人的标题和描述，并向用户介绍这是一个基于OpenAI GPT-3.5模型的简单聊天机器人，并且需要提供OpenAI API密钥才能使用。
 · 获取API密钥：st.text_input（）创建一个安全的文本输入框，要求用户输入OpenAI API密钥，输入内容将以密码形式隐藏，以保护用户密钥的安全性。
+### Code demonstration
+```import streamlit as st
 
+# Show title and description
+st.title("Chatbot")
+st.write(
+    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
+    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
+    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
+)
+```
 
 ### 用户输入验证和界面逻辑
 · API密钥验证：通过if not openai_api_key:条件确定用户是否输入了API密钥。如果没有输入，使用st.info（）显示提示，告诉用户需要添加API密钥才能继续。
