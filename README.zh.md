@@ -82,3 +82,13 @@ st.write(
 ### 用户输入验证和界面逻辑
 · API密钥验证：通过if not openai_api_key:条件确定用户是否输入了API密钥。如果没有输入，使用st.info（）显示提示，告诉用户需要添加API密钥才能继续。
 · 聊天界面占位符：如果用户提供了有效的API密钥，使用pass语句保留位置，表示在用户提供API密钥后，与OpenAI API交互的后续聊天逻辑尚未实现，需要进一步开发。
+### Code demonstration
+```# Request the user to input the OpenAI API key via a text input box
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="")
+else:
+    # If the API key exists, proceed to display the chat interface
+    # This is a placeholder for the subsequent chat logic
+    pass
+```
