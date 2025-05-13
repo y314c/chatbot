@@ -1,36 +1,37 @@
-¹Ø¼ü×Ö£º
-1.
-API£¨Application Programming Interface£©Ò»ÖÖ¹æÔò¡¢Ğ­ÒéºÍ¹¤¾ßµÄ¼¯ºÏ¡£
-ÏîÄ¿ÖĞtext.inputº¯Êı´´Ôì½¨ÃÜÂë¿ò£¬ÓÃ»§¿ÉÊäÈëAPIÃØÔ¿¡£
-A collection of rules, protocols and tools.
-In the project, the text.input function creates a password box where users can enter their API keys.
+1.**API**ï¼ˆApplication Programming Interfaceï¼‰<br>
+  ä¸€ç§è§„åˆ™ã€åè®®å’Œå·¥å…·çš„é›†åˆã€‚<br>
+  é¡¹ç›®ä¸­text.inputå‡½æ•°åˆ›é€ å»ºå¯†ç æ¡†ï¼Œç”¨æˆ·å¯è¾“å…¥APIç§˜é’¥ã€‚<br>
+  A collection of rules, protocols and tools.
+  In the project, the text.input function creates a password box where users can enter their API keys.<br>
 
-2.
-ÔÆ¼ÆËã£¨Cloud Computing£©Í¨¹ı»¥ÁªÍøÌá¹©¼ÆËã×ÊÔ´ºÍ·şÎñ£¬ÁÄÌì»úÆ÷ÈË¿ÉÒÔÀûÓÃÔÆ¼ÆËãÆ½Ì¨µÄÇ¿´ó¼ÆËãÄÜÁ¦ºÍ´æ´¢×ÊÔ´À´½øĞĞÄ£ĞÍÑµÁ·¡¢Êı¾İ´¦ÀíºÍ·şÎñ²¿Êğ£¬ÊµÏÖÁé»îÀ©Õ¹ºÍ¸ßĞ§ÔËĞĞ¡£
-By providing computing resources and services through the Internet, chatbots can leverage the powerful computing capabilities and storage resources of cloud computing platforms for model training, data processing, and service deployment, achieving flexible scalability and efficient operation.
-3.
-ÒâÍ¼·ÖÀà£¨Intent Classification£©½«ÓÃ»§ÊäÈëµÄÎÄ±¾°´ÕÕÆäÒâÍ¼½øĞĞ·ÖÀà£¬ÀıÈç²éÑ¯ĞÅÏ¢¡¢Ñ°Çó°ïÖú¡¢·¢ÆğÖ¸ÁîµÈ£¬ÒÔ±ãÁÄÌì»úÆ÷ÈËÄÜ¹»¸ù¾İ²»Í¬µÄÒâÍ¼Ìá¹©ÏàÓ¦µÄ»Ø´ğ¡£ÔÚ¶Ô»°ÊäÈëºó£¬¶ÔÓÃ»§µÄ»°Óï²¶»ñÓë´¦Àí¡£
-Classify the text input by users according to their intentions, such as querying information, seeking help, or issuing instructions, so that the chatbot can provide corresponding responses based on different intentions. After the dialogue input, capture and process the user's words.
+2.**Cloud Computing**ï¼ˆäº‘è®¡ç®—ï¼‰<br>
+é€šè¿‡äº’è”ç½‘æä¾›è®¡ç®—èµ„æºå’ŒæœåŠ¡ï¼ŒèŠå¤©æœºå™¨äººå¯ä»¥åˆ©ç”¨äº‘è®¡ç®—å¹³å°çš„å¼ºå¤§è®¡ç®—èƒ½åŠ›å’Œå­˜å‚¨èµ„æºæ¥è¿›è¡Œæ¨¡å‹è®­ç»ƒã€æ•°æ®å¤„ç†å’ŒæœåŠ¡éƒ¨ç½²ï¼Œå®ç°çµæ´»æ‰©å±•å’Œé«˜æ•ˆè¿è¡Œã€‚<br>
+By providing computing resources and services through the Internet, chatbots can leverage the powerful computing capabilities and storage resources of cloud computing platforms for model training, data processing, and service deployment, achieving flexible scalability and efficient operation.<br>
 
-4.
-¶Ô»°¹ÜÀí£¨Dialogue Management£©¸ºÔğ´¦ÀíÁÄÌì»úÆ÷ÈËÓëÓÃ»§Ö®¼äµÄ¶Ô»°Á÷³Ì£¬°üÀ¨¶Ô»°×´Ì¬¸ú×Ù¡¢¶Ô»°²ßÂÔÖÆ¶¨¡¢»Ø¸´Éú³ÉµÈ£¬ÒÔÈ·±£¶Ô»°µÄÁ¬¹áĞÔºÍÓĞĞ§ĞÔ¡£ÔÚÁÄÌì»úÆ÷ÈËÖĞÏìÓ¦¶ÔÓ¦µÄ»°Óï²¢Éú³ÉÏàÓ¦µÄ»Ø´ğ¡£
-Responsible for handling the conversation process between chatbots and users, including conversation status tracking, conversation strategy development, reply generation, etc., to ensure the coherence and effectiveness of the conversation. Respond to the corresponding words in the chatbot and generate corresponding answers.
+3.**Intent Classification**ï¼ˆæ„å›¾åˆ†ç±»ï¼‰<br>
+å°†ç”¨æˆ·è¾“å…¥çš„æ–‡æœ¬æŒ‰ç…§å…¶æ„å›¾è¿›è¡Œåˆ†ç±»ï¼Œä¾‹å¦‚æŸ¥è¯¢ä¿¡æ¯ã€å¯»æ±‚å¸®åŠ©ã€å‘èµ·æŒ‡ä»¤ç­‰ï¼Œä»¥ä¾¿èŠå¤©æœºå™¨äººèƒ½å¤Ÿæ ¹æ®ä¸åŒçš„æ„å›¾æä¾›ç›¸åº”çš„å›ç­”ã€‚åœ¨å¯¹è¯è¾“å…¥åï¼Œå¯¹ç”¨æˆ·çš„è¯è¯­æ•è·ä¸å¤„ç†ã€‚<br>
+Classify the text input by users according to their intentions, such as querying information, seeking help, or issuing instructions, so that the chatbot can provide corresponding responses based on different intentions. After the dialogue input, capture and process the user's words.<br>
 
-5.
-×ÔÈ»ÓïÑÔÀí½â£¨Natural Language Processing£¬NLP£©½âÎöÓÃ»§ÊäÈëµÄÎÄ±¾»òÓïÒô£¬Ê¶±ğÒâÍ¼ºÍÊµÌå¡£ÁÄÌì»úÆ÷ÈËÖĞÀí½âÓÃ»§ÊäÈëµÄ»°Óï²¢ÁË½âÒâÍ¼¡£
-Analyze user input text or speech, recognize intent and entities. In chatbots, it is important to understand user input and their intentions.
+4.**Dialogue Management**ï¼ˆå¯¹è¯ç®¡ç†ï¼‰<br>
+è´Ÿè´£å¤„ç†èŠå¤©æœºå™¨äººä¸ç”¨æˆ·ä¹‹é—´çš„å¯¹è¯æµç¨‹ï¼ŒåŒ…æ‹¬å¯¹è¯çŠ¶æ€è·Ÿè¸ªã€å¯¹è¯ç­–ç•¥åˆ¶å®šã€å›å¤ç”Ÿæˆç­‰ï¼Œä»¥ç¡®ä¿å¯¹è¯çš„è¿è´¯æ€§å’Œæœ‰æ•ˆæ€§ã€‚åœ¨èŠå¤©æœºå™¨äººä¸­å“åº”å¯¹åº”çš„è¯è¯­å¹¶ç”Ÿæˆç›¸åº”çš„å›ç­”ã€‚<br>
+Responsible for handling the conversation process between chatbots and users, including conversation status tracking, conversation strategy development, reply generation, etc., to ensure the coherence and effectiveness of the conversation. Respond to the corresponding words in the chatbot and generate corresponding answers.<br>
 
-6.
-Assistant ÖúÊÖÏìÓ¦ĞÅÏ¢ºóÁ÷Ê½´¦ÀíÏìÓ¦¡£
-Assistant Assistant responds to information and processes responses in a streaming manner.
+5.**Natural Language Processingï¼ŒNLP**ï¼ˆè‡ªç„¶è¯­è¨€ç†è§£ï¼‰<br>
+è§£æç”¨æˆ·è¾“å…¥çš„æ–‡æœ¬æˆ–è¯­éŸ³ï¼Œè¯†åˆ«æ„å›¾å’Œå®ä½“ã€‚èŠå¤©æœºå™¨äººä¸­ç†è§£ç”¨æˆ·è¾“å…¥çš„è¯è¯­å¹¶äº†è§£æ„å›¾ã€‚<br>
+Analyze user input text or speech, recognize intent and entities. In chatbots, it is important to understand user input and their intentions.<br>
 
-7.
-Idempotent guarantee£¨ÃİµÈĞÔ±£Ö¤£©£º×Ô¶¯Ïò GET ÇëÇóÌí¼ÓÎ¨Ò» ID ²ÎÊı£¬ÒÔ·ÀÖ¹ÖØ¸´µÄ¸±×÷ÓÃ¡£
+6.**Assistant** <br>
+åŠ©æ‰‹å“åº”ä¿¡æ¯åæµå¼å¤„ç†å“åº”ã€‚<br>
+Assistant Assistant responds to information and processes responses in a streaming manner.<br>
+
+7.**Idempotent guarantee**ï¼ˆå¹‚ç­‰æ€§ä¿è¯ï¼‰<br>
+è‡ªåŠ¨å‘ GET è¯·æ±‚æ·»åŠ å”¯ä¸€ ID å‚æ•°ï¼Œä»¥é˜²æ­¢é‡å¤çš„å‰¯ä½œç”¨ã€‚<br>
 dempotent guarantee: Automatically adds a unique ID parameter to GET requests to prevent duplicate side effects.
 
-8.
-LRU »º´æÓÅ»¯ ¼õÉÙÖØ¸´µÄ¼ÆËã/ÇëÇó£¬Ìá¸ßÏìÓ¦ËÙ¶È£¬²¢½µµÍºó¶Ë¸ºÔØ¡£
-LRU cache optimization reduces duplicate calculations/requests, improves response speed, and reduces backend load.
+8.**LRU ç¼“å­˜ä¼˜åŒ–** <br>
+å‡å°‘é‡å¤çš„è®¡ç®—/è¯·æ±‚ï¼Œæé«˜å“åº”é€Ÿåº¦ï¼Œå¹¶é™ä½åç«¯è´Ÿè½½ã€‚<br>
+LRU cache optimization reduces duplicate calculations/requests, improves response speed, and reduces backend load.<br>
 
-9.½Ó¿Ú³õÊ¼»¯£¨Interface initialization £©³õÊ¼»¯ÓëÓÃ»§½»»¥µÄÎïÀí½Ó¿Ú£¬È·±£ÓÃ»§ÏûÏ¢ÄÜ±»»úÆ÷ÈË½ÓÊÕ¡£
-Initialize the physical interface for user interaction to ensure that user messages can be received by the robot.
+9.**æ¥å£åˆå§‹åŒ–**ï¼ˆInterface initialization ï¼‰<br>
+åˆå§‹åŒ–ä¸ç”¨æˆ·äº¤äº’çš„ç‰©ç†æ¥å£ï¼Œç¡®ä¿ç”¨æˆ·æ¶ˆæ¯èƒ½è¢«æœºå™¨äººæ¥æ”¶ã€‚<br>
+Initialize the physical interface for user interaction to ensure that user messages can be received by the robot.<br>
