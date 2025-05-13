@@ -261,3 +261,66 @@ with st.chat_message("assistant"):
   - 这种方法通过让用户能够实时看到回复的生成过程，而不是等待整个消息一次性出现，从而增强了用户体验，使对话感觉更加动态和自然。
   - 
 <！--by黄敏初 -->
+
+# 输入处理模块
+
+在该应用中，输入处理模块负责获取用户的OpenAI API密钥和用户输入的聊天消息。以下是相关代码及详细说明。
+## 代码
+
+```python
+# Ask user for their OpenAI API key via `st.text_input`.
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+else:
+    # Create an OpenAI client.
+    client = OpenAI(api_key=openai_api_key)
+
+    # Create a session state variable to store the chat messages. This ensures that the
+    # messages persist across reruns.
+    if "messages" not in st.session_state:
+        st.session_state.messages = []
+
+    # Display the existing chat messages via `st.chat_message`.
+    for message in st.session_state.messages:
+        with st.chat_message(message["role"]):
+            st.markdown(message["content"])
+
+    # Create a chat input field to allow the user to enter a message. This will display
+    # automatically at the bottom of the page.
+    if prompt := st.chat_input("What is up?"):
+        # Store and display the current prompt.
+        st.session_state.messages.append({"role": "user", "content": prompt})
+        with st.chat_message("user"):
+            st.markdown(prompt)
+```
+## 1. 获取OpenAI API密钥:
+```
+openai_api_key = st.text_input("OpenAI API Key", type="password")
+```
+- 使用st.text_input创建一个输入框，提示用户输入OpenAI API密钥。type="password"参数确保输入内容以密码形式隐藏显示。
+## 2. 验证API密钥有效性:
+```
+if not openai_api_key:
+    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+```
+- 如果用户未输入API密钥，使用st.info提示用户需要添加密钥才能继续使用。
+## 3. 创建OpenAI客户端:
+```
+client = OpenAI(api_key=openai_api_key)
+```
+- 当用户提供有效的API密钥后，使用该密钥创建OpenAI客户端实例，用于后续的API调用。
+## 4. 创建聊天输入框:
+```
+if prompt := st.chat_input("What is up?"):
+```
+- 使用st.chat_input创建消息输入框，允许用户输入聊天内容。当用户输入消息后，内容会存储在prompt变量中。
+## 5. 存储并显示用户输入:
+```
+st.session_state.messages.append({"role": "user", "content": prompt})
+with st.chat_message("user"):
+    st.markdown(prompt)
+```
+- 将用户输入的消息添加到会话状态的messages列表中，并使用st.chat_message显示该消息。
+
+<! -- by 韦统 -->
