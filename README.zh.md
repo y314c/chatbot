@@ -93,3 +93,65 @@ else:
     pass
 ```
 <！--by覃化杰 -->
+
+安全认证模块
+动态 API 密钥输入逻辑 openai_api_key = st.text_input（“OpenAI API 密钥”， type=“password”）
+实现逻辑：
+
+将 input type 设置为 “password” 以隐藏纯文本。
+
+未输入键时显示指南提示信息（图标 + 文本组合）。
+
+建议使用 secrets.to 将密钥存储在生产环境中。
+
+安全功能： API Key 动态输入：用户可以通过界面动态输入 API Key。
+
+密钥加密存储：密钥不应以纯文本形式存储。它们应以加密形式存储以增强安全性。
+
+按键显示和隐藏：输入时，应隐藏按键内容，以防止他人。
+
+当用户未输入 key 时，显示引导提示信息，帮助用户完成作。
+
+实现逻辑
+
+API 密钥的动态输入：
+
+import streamlit as st
+
+API 密钥的动态输入逻辑
+api_key = st.text_input（“OpenAI API 密钥”， type=“password”）
+
+使用 Streamlit 的功能创建一个密码输入框，用户可以在其中输入他们的 API 密钥。text_input
+
+“type=”password“” 参数确保输入的内容以密文形式显示，从而增强安全性。
+
+密钥加密存储：
+建议使用 secrets 模块来存储和管理密钥。secrets 模块是 Python 中的内置模块，专门用于处理敏感信息，例如密码和密钥。
+
+import secrets
+
+Generate an encrypted key
+encrypted_api_key = secrets.token_urlsafe(16)
+
+Store the encrypted key (This is just an example. The actual storage method should be determined based on the security requirements of the production environment)
+Do not print or expose the key directly in a real scenario
+print("Encrypted API Key:", encrypted_api_key)
+键隐藏/显示：
+
+已经通过 type=“password” 实现了，输入框中的内容会以密文的形式显示。
+
+键隐藏/显示：
+
+已经通过 type=“password” 实现了，输入框中的内容会以密文的形式显示。
+
+引导提示信息：
+
+当用户尚未输入密钥时，显示指导提示消息和图标。
+
+如果不api_key： st.warning（'请输入您的 OpenAI API 密钥以继续。'） st.image（'path_to_icon.png'） # 替换为图标的实际路径
+
+生产环境
+
+在生产环境中，使用 secrets.to 存储密钥，以保证密钥的安全性和隐私性。
+
+<！--by罗全有 -->
