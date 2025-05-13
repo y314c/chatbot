@@ -126,16 +126,15 @@ api_key = st.text_input（“OpenAI API 密钥”， type=“password”）
 “type=”password“” 参数确保输入的内容以密文形式显示，从而增强安全性。
 
 密钥加密存储：
-
 建议使用 secrets 模块来存储和管理密钥。secrets 模块是 Python 中的内置模块，专门用于处理敏感信息，例如密码和密钥。
 
 import secrets
 
-# Generate an encrypted key
+Generate an encrypted key
 encrypted_api_key = secrets.token_urlsafe(16)
 
-# Store the encrypted key (This is just an example. The actual storage method should be determined based on the security requirements of the production environment)
-# Do not print or expose the key directly in a real scenario
+Store the encrypted key (This is just an example. The actual storage method should be determined based on the security requirements of the production environment)
+Do not print or expose the key directly in a real scenario
 print("Encrypted API Key:", encrypted_api_key)
 键隐藏/显示：
 
