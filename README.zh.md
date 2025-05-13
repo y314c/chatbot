@@ -195,3 +195,69 @@ if "messages" not in st.session_state:
 支持扩展多消息属性（时间戳等）
 
 <！--by邓荣祥 -->
+
+
+# 消息渲染模块的详细功能描述与实现分析
+
+在这款聊天机器人应用中，消息渲染是确保用户与助手之间顺畅且易于理解的沟通的关键部分。有效的消息渲染能够提升用户体验并清晰地传达信息。以下是消息渲染的主要组成部分及其详细说明。
+
+## 代码片段及说明
+
+### 1. 显示现有聊天消息
+这段代码从 `st.session_state.messages` 中检索并显示之前的聊天消息，使用户能够回顾他们的对话历史。
+
+```python
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+```
+
+- **遍历消息**：
+  - `for message in st.session_state.messages:` 这行代码遍历存储在会话状态中的所有消息。
+  - `st.session_state` 是 Streamlit 提供的一个功能，用于在用户会话中保持数据，确保之前的聊天消息可以被访问。
+
+- **渲染消息**：
+  - `with st.chat_message(message["role"]):` 这行代码使用上下文管理器根据消息的角色（可以是“用户”或“助手”）来渲染每条消息。
+  - 这种区分有助于在视觉上将消息分开，让用户清楚地知道是谁在说话。
+
+- **显示内容**：
+  - `st.markdown(message["content"])` 这行代码使用 Streamlit 的 `st.markdown` 方法来渲染消息内容。
+  - 这允许使用基本的 Markdown 格式，使消息更易于阅读且更具吸引力。
+
+### 2. 存储和显示用户输入
+当用户提交一条新消息时，将执行以下代码来存储和显示输入：
+
+```python
+st.session_state.messages.append({"role": "user", "content": prompt})
+with st.chat_message("user"):
+    st.markdown(prompt)
+```
+
+- **存储用户输入**：
+  - `st.session_state.messages.append({"role": "user", "content": prompt})` 这行代码将用户输入（存储在变量 `prompt` 中）添加到 `st.session_state.messages` 列表中。
+
+- **渲染用户消息**：
+  - `with st.chat_message("user"):` 这行代码为渲染用户消息创建了一个上下文。
+  - 这确保了消息以用户消息的适当格式显示在聊天界面中。
+
+- **显示内容**：
+  - `st.markdown(prompt)` 这行代码使用 Streamlit 的 `st.markdown` 方法在聊天窗口中渲染用户输入。
+  - 这允许使用基本的 Markdown 格式，使消息更具视觉吸引力且更易于阅读。
+
+### 3. 显示助手回复
+助手生成回复后，将使用以下代码：
+
+```python
+with st.chat_message("assistant"):
+    response = st.write_stream(stream)
+```
+
+- **渲染助手消息**：
+  - `with st.chat_message("assistant"):` 这行代码为渲染助手的消息创建了一个上下文。
+  - 这确保了消息在聊天界面中正确显示，并且以助手角色的适当格式进行格式化。
+
+- **流式响应**：
+  - `response = st.write_stream(stream)` 这行代码使用 `st.write_stream` 方法逐步显示助手的回复。
+  - 这种方法通过让用户能够实时看到回复的生成过程，而不是等待整个消息一次性出现，从而增强了用户体验，使对话感觉更加动态和自然。
+  - 
+<！--by黄敏初 -->
